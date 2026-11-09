@@ -1,13 +1,22 @@
-# Narendra Kalluri - Portfolio Repository
+# Narendra Kalluri - Personal Portfolio
 
-This repository contains the source code for my modern, light-themed personal portfolio website, designed to showcase my experience as a Python Automation Engineer specializing in Enterprise AI Orchestration and Agentic Workflows.
+Welcome to the source code for my personal portfolio website.
 
-## How to deploy this to GitHub Pages
+## About Me
+I am a detail-oriented **Python Automation Engineer** with over 5 years of experience designing scalable backend systems, complex automation pipelines, and enterprise API orchestrations. My recent work focuses on bridging traditional backend infrastructure with enterprise AI—building agentic workflows and self-healing CI/CD pipelines by integrating established LLM APIs (Codex, Gemini, OpenAI) into robust enterprise environments.
 
-1. Log into your GitHub account and create a new repository.
-2. Name the repository EXACTLY: `NarendraKalluri125.github.io`. Make sure it is set to **Public**.
-3. Extract the contents of this ZIP file.
-4. Upload `index.html` and `README.md` to your new repository and commit the changes.
-5. Go to your repository's **Settings** > **Pages** (on the left sidebar).
-6. Under "Build and deployment", ensure the source is set to "Deploy from a branch", and select the `main` branch.
-7. Within 1-2 minutes, your portfolio will be live at `https://NarendraKalluri125.github.io`!
+## Core Competencies
+* **Python & Django**
+* **Enterprise AI Orchestration & Agentic Workflows**
+* **Jenkins / CI/CD Automation & Playwright**
+* **Atlassian REST APIs (Jira & Confluence)**
+* **AWS Cloud Architecture & Windows Server Automation**
+* **Identity & Access Management (IAM) / RBAC**
+
+## Certifications
+* **Python Certified Associate Developer** - OpenEDG Python Institute (Mar 2024)
+* **AWS Certified Cloud Practitioner** - Amazon Web Services (Valid through Jul 2025)
+
+## Connect with Me
+* [LinkedIn Profile](https://linkedin.com/in/narendra-kalluri)
+* [Portfolio Website](https://NarendraKalluri125.github.io)
