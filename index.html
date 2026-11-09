@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narendra Kalluri | AI & Automation Engineer</title>
+    <style>
+        /* Base & Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+            background-color: #f8f9fa; 
+            color: #333; 
+            line-height: 1.6; 
+        }
+        a { text-decoration: none; color: inherit; }
+        
+        /* Navigation */
+        nav { 
+            position: sticky; top: 0; 
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.2rem 5%; z-index: 1000; 
+        }
+        nav .logo { font-size: 1.4rem; font-weight: 800; color: #1a365d; letter-spacing: 0.5px; }
+        nav .links { display: flex; gap: 2rem; }
+        nav .links a { font-weight: 600; color: #4a5568; transition: color 0.2s; font-size: 0.95rem; }
+        nav .links a:hover { color: #3182ce; }
+
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%); 
+            color: #fff; 
+            padding: 8rem 5% 6rem; 
+            text-align: center; 
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; font-weight: 800; letter-spacing: -1px; }
+        .hero h2 { font-size: 1.5rem; font-weight: 400; margin-bottom: 2.5rem; color: #e2e8f0; }
+        .btn-primary { 
+            display: inline-block; padding: 1rem 2.5rem; 
+            background: #48bb78; color: #fff; 
+            border-radius: 50px; font-weight: 700; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s; 
+        }
+        .btn-primary:hover { 
+            background: #38a169;
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
+        }
+
+        /* Container & Sections */
+        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 5%; }
+        .section-title { 
+            text-align: center; font-size: 2.5rem; 
+            margin-bottom: 3.5rem; color: #2d3748; 
+            position: relative; font-weight: 800;
+        }
+        .section-title::after { 
+            content: ''; width: 80px; height: 5px; 
+            background: #3182ce; border-radius: 5px;
+            position: absolute; bottom: -15px; left: 50%; 
+            transform: translateX(-50%); 
+        }
+
+        /* About Section */
+        .about-text {
+            font-size: 1.15rem; color: #4a5568; 
+            text-align: center; max-width: 900px; 
+            margin: 0 auto; line-height: 1.8;
+        }
+
+        /* Skills Pills */
+        .skills-grid { 
+            display: flex; flex-wrap: wrap; 
+            justify-content: center; gap: 1rem; 
+            margin-top: 2rem;
+        }
+        .skill { 
+            background: #fff; color: #2b6cb0; 
+            padding: 0.8rem 1.8rem; border-radius: 50px; 
+            font-weight: 700; font-size: 1rem; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease; 
+        }
+        .skill:hover { 
+            background: #3182ce; color: #fff; 
+            transform: translateY(-3px); 
+            box-shadow: 0 8px 15px rgba(49, 130, 206, 0.2); 
+        }
+
+        /* Experience Grid (Cards) */
+        .timeline { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+        .job-card { 
+            background: #fff; border-radius: 12px; 
+            padding: 2.5rem; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            border-left: 6px solid #3182ce;
+            transition: transform 0.3s ease;
+        }
+        .job-card:hover { transform: translateY(-5px); }
+        .job-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+        .job-title { font-size: 1.5rem; font-weight: 800; color: #2d3748; }
+        .job-company { font-size: 1.1rem; color: #3182ce; font-weight: 600; margin-top: 0.2rem; }
+        .job-date { background: #edf2f7; color: #4a5568; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; }
+        .job-card ul { margin-left: 1.5rem; color: #4a5568; }
+        .job-card li { margin-bottom: 0.8rem; }
+        .tech-stack { 
+            margin-top: 1.5rem; padding-top: 1.5rem; 
+            border-top: 1px solid #e2e8f0; 
+            font-size: 0.95rem; color: #718096; font-weight: 600;
+        }
+
+        /* Credentials Layout */
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Footer */
+        footer { 
+            background: #1a202c; color: #e2e8f0; 
+            text-align: center; padding: 4rem 5%; 
+        }
+        .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
+        .social-links a { 
+            display: inline-block; padding: 0.8rem 2rem; 
+            border: 2px solid #4a5568; border-radius: 50px; 
+            font-weight: 600; transition: all 0.3s ease; 
+        }
+        .social-links a:hover { background: #3182ce; border-color: #3182ce; color: #fff; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav .links { display: none; } /* Simplified for mobile */
+            .job-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">NK.</div>
+        <div class="links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#credentials">Credentials</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Narendra Kalluri</h1>
+        <h2>Python Automation Engineer | Enterprise AI Orchestration & Agentic Workflows</h2>
+        <a href="#experience" class="btn-primary">View My Work</a>
+    </header>
+
+    <section id="about" class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="about-text">
+            Detail-oriented Python Automation Engineer with over 5 years of experience designing scalable backend systems and complex automation pipelines. Currently working as a System Engineer at TCS, I specialize in microservices architecture, cloud deployments, and enterprise API orchestration.
+            <br><br>
+            Beyond core backend development, I have extensive experience programmatically managing enterprise environments using Atlassian REST APIs to automate bulk data operations, workspace provisioning, and IAM configurations. As the software landscape evolves, I am focused on bridging the gap between traditional backend infrastructure and enterprise AI—building agentic workflows and self-healing CI/CD pipelines by integrating established LLM APIs (Codex, Gemini, OpenAI) into robust enterprise environments.
+        </p>
+    </section>
+
+    <section id="skills" class="container" style="background-color: #fff; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); padding-top: 4rem; padding-bottom: 5rem;">
+        <h2 class="section-title">Core Competencies</h2>
+        <div class="skills-grid">
+            <div class="skill">Python & Django</div>
+            <div class="skill">Enterprise AI Orchestration</div>
+            <div class="skill">Agentic Workflows</div>
+            <div class="skill">Jenkins / CI/CD Automation</div>
+            <div class="skill">Atlassian REST APIs</div>
+            <div class="skill">Playwright Test Automation</div>
+            <div class="skill">Identity & Access Management (IAM)</div>
+            <div class="skill">Windows Server Automation</div>
+            <div class="skill">AWS Cloud Architecture</div>
+            <div class="skill">Microservices</div>
+        </div>
+    </section>
+
+    <section id="experience" class="container">
+        <h2 class="section-title">Professional Experience</h2>
+        
+        <div class="timeline">
+            <!-- Job 1 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">System Engineer (Enterprise AI & Automation)</div>
+                        <div class="job-company">Tata Consultancy Services (TCS)</div>
+                    </div>
+                    <div class="job-date">Jul 2025 – Present</div>
+                </div>
+                <ul>
+                    <li>Engineered an end-to-end, agentic CI/CD testing framework in Jenkins that autonomously orchestrates zero-to-one script generation and self-healing test recovery for Jira and Confluence plugins.</li>
+                    <li>Automated the test creation pipeline by integrating Codex CLI to dynamically parse Jira Test Definitions (TD) and Test Cases (TC), translating human-defined requirements into executable Python/Playwright scripts.</li>
+                    <li>Built an AI-driven recovery workflow that triggers upon pipeline failure, seamlessly ingesting Jenkins console logs and visual Xray attachments as multimodal context to debug, rewrite, and self-validate code across 3 local dry-runs before routing to a human-in-the-loop Git PR.</li>
+                    <li>Architected a zero-touch enterprise provisioning system hosted on a Windows VM, utilizing Task Scheduler to execute hourly Python scripts that automatically poll designated directories for .txt configuration files.</li>
+                    <li>Leveraged Atlassian service account APIs within these scheduled tasks to autonomously parse the ingested files and create distinct Jira projects and Confluence spaces, dynamically validating Active Directory (AD) groups to enforce strict Role-Based Access Control (RBAC).</li>
+                </ul>
+                <div class="tech-stack">Tech Stack: Python, Jenkins, Codex CLI, Playwright, Atlassian REST APIs, Windows Server VM, Active Directory, Xray.</div>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">System Engineer (Backend & API Orchestration)</div>
+                        <div class="job-company">Tata Consultancy Services (TCS)</div>
+                    </div>
+                    <div class="job-date">Oct 2023 – Jun 2025</div>
+                </div>
+                <ul>
+                    <li>Architected and maintained scalable backend systems and microservices using Python and Django, establishing a highly available and secure infrastructure for enterprise applications.</li>
+                    <li>Engineered high-throughput Python automation scripts leveraging Jira and Confluence REST APIs to execute complex bulk operations at an enterprise scale, including programmatic system link updates, mass attachment migrations, and dynamic page content modifications.</li>
+                    <li>Automated complex administrative configurations by programmatically attaching workflow, notification, and priority schemes to standardize project governance across the organization.</li>
+                    <li>Built reliable post-deployment notification pipelines to automatically dispatch provisioning summaries, access URLs, and project details to targeted distribution lists (PDLs).</li>
+                    <li>Maintained and optimized system infrastructure using Terraform for automated deployments and Kibana/Stratus for real-time monitoring and performance troubleshooting.</li>
+                </ul>
+                <div class="tech-stack">Tech Stack: Python, Django, REST APIs, Terraform, Kibana, Stratus, Microservices.</div>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Assistant System Engineer</div>
+                        <div class="job-company">Tata Consultancy Services (TCS)</div>
+                    </div>
+                    <div class="job-date">Aug 2022 – Oct 2023</div>
+                </div>
+                <ul>
+                    <li>Developed robust Python automation scripts for large-scale user data extraction, transformation, and synchronization via complex third-party API integrations (Auth0, Tencent).</li>
+                    <li>Refactored legacy codebases and data pipelines, achieving up to a 70% reduction in execution time and significantly improving enterprise data integration efficiency.</li>
+                </ul>
+            </div>
+
+            <!-- Job 4 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Assistant System Engineer Trainee</div>
+                        <div class="job-company">Tata Consultancy Services (TCS)</div>
+                    </div>
+                    <div class="job-date">Aug 2021 – Aug 2022</div>
+                </div>
+                <ul>
+                    <li>Managed critical ETL jobs and data formatting pipelines utilizing IBM DataStage, SQL, and UNIX to support enterprise data workflows.</li>
+                    <li>Implemented strict data integrity, validation, and error-handling protocols throughout initial automation processes.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="credentials" class="container">
+        <h2 class="section-title">Credentials & Education</h2>
+        <div class="credentials-grid">
+            <div class="job-card" style="border-left-color: #48bb78;">
+                <h3 style="color: #2d3748; margin-bottom: 1rem;">Certifications</h3>
+                <ul>
+                    <li><strong>Python Certified Associate Developer</strong><br><span style="color: #718096; font-size: 0.9rem;">OpenEDG Python Institute • Mar 2024</span></li>
+                    <li style="margin-top: 1rem;"><strong>AWS Certified Cloud Practitioner</strong><br><span style="color: #718096; font-size: 0.9rem;">Amazon Web Services • Valid thru Jul 2025</span></li>
+                </ul>
+            </div>
+            
+            <div class="job-card" style="border-left-color: #ecc94b;">
+                <h3 style="color: #2d3748; margin-bottom: 1rem;">Education</h3>
+                <ul>
+                    <li><strong>Bachelor of Technology (B.Tech)</strong><br><span style="color: #718096; font-size: 0.9rem;">Narasaraopet Engineering College, Guntur • 2021</span></li>
+                </ul>
+                
+                <h3 style="color: #2d3748; margin-top: 2rem; margin-bottom: 1rem;">Languages</h3>
+                <div class="skills-grid" style="justify-content: flex-start; margin-top: 0; gap: 0.5rem;">
+                    <div class="skill" style="padding: 0.4rem 1rem; font-size: 0.85rem; border-color: #ecc94b; color: #b7791f;">English (Fluent)</div>
+                    <div class="skill" style="padding: 0.4rem 1rem; font-size: 0.85rem; border-color: #ecc94b; color: #b7791f;">Telugu (Native)</div>
+                    <div class="skill" style="padding: 0.4rem 1rem; font-size: 0.85rem; border-color: #ecc94b; color: #b7791f;">Hindi (Professional)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2 style="margin-bottom: 2rem; font-size: 2rem;">Let's Connect</h2>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/narendra-kalluri" target="_blank">LinkedIn</a>
+            <a href="https://github.com/NarendraKalluri125" target="_blank">GitHub</a>
+            <a href="mailto:narendrakalluri20@gmail.com">Email Me</a>
+        </div>
+        <p style="color: #718096;">&copy; 2026 Narendra Kalluri. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
